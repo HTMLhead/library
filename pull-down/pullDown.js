@@ -5,21 +5,25 @@ class PullDown {
   }
 
   init() {
-    this.cssProperty = `width:${this.optObj.width}, height:${this.optObj.height}`;
+    this.targetDom = document.querySelector(this.elObj.target);
+    this.targetDom.style.transition = `0.3s all`
     this.addBtnEvt();
   }
 
   addBtnEvt() {
-    const showingBtn = document.querySelector(this.elObj.btn);
-    showingBtn.addEventListener('click', this.showing.bind(this));
+    const showingBtn = document.querySelector(this.elObj.openBtn);
+    const closingBtn = document.querySelector(this.elObj.closeBtn)
+    showingBtn.addEventListener('click', () => this.showing());
+    closingBtn.addEventListener('click', () => this.closing());
   }
 
   showing() {
-    const targetDom = document.querySelector(this.elObj.target);
-    targetDom.style.width = `${this.optObj.width}`;
-    targetDom.style.height =  `${this.optObj.height}`;
-    targetDom.style.transition = `1s all`
+    this.targetDom.style.width = `${this.optObj.width}`;
+    this.targetDom.style.height =  `${this.optObj.height}`;
   }
 
-
+  closing() {
+    this.targetDom.style.width = `0`;
+    this.targetDom.style.height = `0`;
+  }
 }

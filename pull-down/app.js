@@ -1,8 +1,9 @@
 new PullDown({
   target:'.hidden-window',
-  btn:'.open-btn'
+  openBtn:'.open-btn',
+  closeBtn:'.close-btn'
 },{
-  width:'5rem',
+  width:'10rem',
   height:'100vh',
   animation:'ease-in'
 })
