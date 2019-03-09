@@ -1,5 +1,3 @@
-export { PullDown } from './pullDown.js'
-
 new PullDown({
   target:'.hidden-window'
 },{
