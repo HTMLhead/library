@@ -1,5 +1,6 @@
 new PullDown({
-  target:'.hidden-window'
+  target:'.hidden-window',
+  btn:'.open-btn'
 },{
   width:'5rem',
   height:'100vh',
