@@ -1,13 +1,11 @@
 class PullDown {
   constructor(elObj, optObj) {
     Object.assign(this, { elObj, optObj });
-    this.init()
+    this.init();
   }
 
   init() {
-    const showClass = document.createElement('show');
-    showClass.style = `widht:${this.optObj.width}, height:${this.optObj.height}`
-    this.showClass = showClass
+    this.cssProperty = `width:${this.optObj.width}, height:${this.optObj.height}`;
     this.addBtnEvt();
   }
 
@@ -16,5 +14,12 @@ class PullDown {
     showingBtn.addEventListener('click', this.showing.bind(this));
   }
 
-  
+  showing() {
+    const targetDom = document.querySelector(this.elObj.target);
+    targetDom.style.width = `${this.optObj.width}`;
+    targetDom.style.height =  `${this.optObj.height}`;
+    targetDom.style.transition = `1s all`
+  }
+
+
 }
