@@ -7,7 +7,7 @@ class PullDown {
   init() {
     this.targetDom = document.querySelector(this.elObj.target);
     this.targetDom.style.height =  `${this.optObj.height}`;
-    this.targetDom.style.transition = `0.3s all`;
+    this.targetDom.style.transition = `0.3s all ${this.optObj.animation}`;
     this.addBtnEvt();
   }
 
