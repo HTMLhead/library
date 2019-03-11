@@ -1,2 +1,7 @@
-# library
-own library collection
+# 나만의 library 모음
+
+* pull-Down
+  1. 버튼을 누르면 원하는 곳에서 창을 끌어냅니다.
+  1. 끌어내는 애니메이션 동작은 ease | linear | ease-in 등 원하는 동작을 사용할 수 있습니다.
+  1. 입력받는 class명은 버튼, 끌어내릴 창입니다.
+  1. 입력받는 option값은 창의크기, 끌어내는 애니메이션 동작입니다.
