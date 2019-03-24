@@ -1,28 +1,37 @@
 class PullDown {
   constructor(elObj, optObj) {
     Object.assign(this, { elObj, optObj });
+    this.isOpen = false;
     this.init();
   }
 
   init() {
     this.targetDom = document.querySelector(this.elObj.target);
-    this.targetDom.style.height =  `${this.optObj.height}`;
-    this.targetDom.style.transition = `0.3s all ${this.optObj.animation}`;
     this.addBtnEvt();
   }
 
   addBtnEvt() {
-    const showingBtn = document.querySelector(this.elObj.openBtn);
-    const closingBtn = document.querySelector(this.elObj.closeBtn);
-    showingBtn.addEventListener('click', () => this.showing());
-    closingBtn.addEventListener('click', () => this.closing());
+    const toggleButton = document.querySelector(this.elObj.toggleButton);
+    toggleButton.addEventListener('click', e => this.toggleShowing(e));
+  }
+
+  toggleShowing(e) {
+    this.isOpen ? this.closing() : this.showing();
+    this.addBtnAnimation()
+  }
+
+  addBtnAnimation() {
+    const secLine = document.querySelector('.sec-line')
+    secLine.classList.toggle('clicked');
   }
 
   showing() {
+    this.isOpen = true;
     this.targetDom.style.width = `${this.optObj.width}`;
   }
 
   closing() {
+    this.isOpen = false;
     this.targetDom.style.width = `0`;
   }
 }
