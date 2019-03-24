@@ -1,54 +1,56 @@
-.open-btn {
-  display: inline-block;
-  border: 1px solid #000;
-  border-radius: 3px;
-  margin-left: 5rem;
-  padding: 0.3rem;
-  transition: 0.3s all;
-}
-.open-btn:hover {
-  cursor: pointer;
-  transition: 0.3s all;
-  background-color: #000;
-  color: #fff;
+body {
+  margin:0;
+  padding-left: 3rem;
 }
 
-.close-btn {
-  display: inline-block;
-  border: 1px solid #000;
-  border-radius: 3px;
-  padding: 0.3rem;
-  transition: 0.3s all;
+.toggle-btn {
+  position : fixed;
+  z-index:99;
+  top:1rem;
+  left:1rem;
   width:2rem;
-  height:1rem;
-}
-.close-btn:hover {
-  cursor: pointer;
-  transition: 0.3s all;
-  background-color: #000;
-  color: #fff;
-}
-
-.title {
-  font-size: 3rem;
-  margin-left: 5rem;
-  margin-top: 5rem;
-}
-
-.hidden-window {
-  border-right: 1px solid #000;
-  display: inline-block;
-  overflow: hidden;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 0rem;
-  height: 100vh;
-  background-color: #fff;
-}
-.something {
-  border: 1px solid #000;
-  width: 3rem;
   height: 2rem;
-  margin: 1rem;
+}
+
+.toggle-btn:hover{
+  cursor: pointer;
+}
+
+.fir-line{
+  position: absolute;
+  top:0.5rem;
+  border:1px solid #000;
+  width :1rem;
+}
+
+.sec-line {
+  position: absolute;
+  top:0.5rem;
+  border:1px solid #000;
+  width:1rem;
+  transform: rotate(90deg);
+  transition: transform 1s;
+}
+
+.clicked {
+  z-index: 2;
+  transform: rotate(360deg);
+  transition: transform 1s;
+}
+
+.hidden {
+  opacity: 0.7;
+  background-color:#c8f363;
+  position:fixed;
+  padding-top: 3rem;
+  left:0;
+  width: 0;
+  height: 100%;
+  overflow:hidden;
+  z-index: 1;
+}
+
+.list {
+  display:block;
+  padding: 1rem;
 }
