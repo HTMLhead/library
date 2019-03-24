@@ -8,6 +8,13 @@ class PullDown {
   init() {
     this.targetDom = document.querySelector(this.elObj.target);
     this.addBtnEvt();
+    this.applyOpt(this.targetDom.style);
+  }
+
+  applyOpt(target) {
+    target.background = `${this.optObj.background}`;
+    target.opacity = `${this.optObj.opacity}`;
+    target.transition = `width ${this.optObj.time} ${this.optObj.animation}`;
   }
 
   addBtnEvt() {
@@ -17,11 +24,11 @@ class PullDown {
 
   toggleShowing(e) {
     this.isOpen ? this.closing() : this.showing();
-    this.addBtnAnimation()
+    this.addBtnAnimation();
   }
 
   addBtnAnimation() {
-    const secLine = document.querySelector('.sec-line')
+    const secLine = document.querySelector('.sec-line');
     secLine.classList.toggle('clicked');
   }
 
