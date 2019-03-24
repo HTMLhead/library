@@ -1,9 +1,6 @@
 new PullDown({
-  target:'.hidden-window',
-  openBtn:'.open-btn',
-  closeBtn:'.close-btn'
+  target:'.hidden',
+  toggleButton: '.toggle-btn'
 },{
-  width:'10rem',
-  height:'100vh',
-  animation:'ease-in'
+  width: '20rem'
 })
