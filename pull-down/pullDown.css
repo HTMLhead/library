@@ -55,3 +55,8 @@ body {
   display:block;
   padding: 1rem;
 }
+
+.context {
+  margin: 0 10rem;
+  font-size: 1.3rem;
+}
